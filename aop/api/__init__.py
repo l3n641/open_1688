@@ -3,3 +3,4 @@ from aop.api.transaction.trade_receive_address import AlibabaTradeReceiveAddress
 from aop.api.transaction.trade_buyer_order_list import AlibabaTradeGetBuyerOrderListParam
 from aop.api.transaction.trade_buyer_view import AlibabaTradeGetBuyerViewParam
 from aop.api.transaction.trade_fast_create_order import AlibabaTradeFastCreateOrderParam
+from aop.api.logistics.logistics_trace_info import AlibabaTradeGetLogisticsTraceInfoBuyerViewParam
