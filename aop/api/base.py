@@ -224,12 +224,13 @@ class BaseApi(object):
 
         except HTTPError as e:
             if not (response.status_code >= 200 and response.status_code < 400):
+                response_json = response.json()
                 param = {
                     "api": self.get_api_uri(),
-                    "error_code": response.get(P_ERROR_CODE),
-                    'error_message': response.get(P_ERROR_MESSAGE),
-                    "exception": response.get(P_EXCEPTION),
-                    'request_id': response.get(P_REQUEST_ID)
+                    "error_code": response_json.get(P_ERROR_CODE),
+                    'error_message': response_json.get(P_ERROR_MESSAGE),
+                    "exception": response_json.get(P_EXCEPTION),
+                    'request_id': response_json.get(P_REQUEST_ID)
                 }
                 raise ApiError(**param)
 
